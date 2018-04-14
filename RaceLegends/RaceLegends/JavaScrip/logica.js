@@ -1,18 +1,21 @@
 ﻿document.addEventListener('DOMContentLoaded',function main(){
-    //ecraCategorias();
-    ecraPilotos("f1");
+    ecraCategorias();
+    //ecraPilotos("f1");
 })
 
 function mostraCategorias(categorias) {
+    topBar.addEventListener("click", voltaInicio);
     for (var i = 0; i < categorias.length; i++) {
         var categoria = categorias[i];
         var CatContainer = document.createElement('div');
-        CatContainer.setAttribute("id", categoria.id )
+        var idcategoria = categoria.id;
+        CatContainer.setAttribute("id", categoria.id)
+        CatContainer.addEventListener("click", function () { trocaCategPilotos(this.id); });
 
-        var nomeContainer = document.createElement('h3');
+        var nomeContainer = document.createElement('h2');
         nomeContainer.textContent = categoria.name;
 
-        var idcategoria = categoria.id;
+        
         var image = getImage(idcategoria);
         var imageContainer = document.createElement('img')
         imageContainer.setAttribute("src", image)
@@ -61,7 +64,7 @@ function mostraPilotos(pilotos) {
         pilotoContainer.appendChild(nacioContainer);
 
 
-        categ.appendChild(pilotoContainer);
+        drivers.appendChild(pilotoContainer);
     }
 }
 
@@ -74,4 +77,16 @@ function ecraPilotos(idCateg) {
         .catch(function (erro) {
             console.error(erro);
         });
+}
+
+function trocaCategPilotos(idCategoria) {
+    categ.style.display = "none";
+    drivers.style.display = "block";
+    ecraPilotos(idCategoria);
+}
+
+function voltaInicio() {
+    categ.style.display = "block";
+    drivers.style.display = "none";
+    drivers.textContent = "";
 }

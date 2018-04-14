@@ -13,7 +13,6 @@
 
 function getImage(categoria) {
     var url = "http://ipt-ti2-racinglegends-api.eu-gb.mybluemix.net/api/v1/categories/";
-    console.log(categoria);
     url += categoria;
     url += "/image";
     return url;
