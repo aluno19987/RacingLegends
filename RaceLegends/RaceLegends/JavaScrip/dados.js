@@ -39,3 +39,26 @@ function getImagePiloto(idPiloto) {
     url += "/image";
     return url;
 }
+
+function getDetalhes(idPiloto) {
+    var url = "http://ipt-ti2-racinglegends-api.eu-gb.mybluemix.net/api/v1/drivers/";
+    url += idPiloto;
+
+    return fetch(url, { headers: { Accept: 'application/json' } })
+        .then(function (resposta) {
+            if (resposta.status === 200) {
+                return resposta.json();
+            } else {
+                return Promise.reject(new Error("Erro ao obter categorias"));
+            }
+        });
+}
+
+function getImageMult(idPiloto, idImagem) {
+    var url = "http://ipt-ti2-racinglegends-api.eu-gb.mybluemix.net/api/v1/drivers/";
+    url += idPiloto;
+    url += "/multimedia/images/";
+    url += idImagem;
+    url += "/image";
+    return url;
+}
