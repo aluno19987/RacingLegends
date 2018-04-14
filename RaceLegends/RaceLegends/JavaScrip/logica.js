@@ -1,6 +1,6 @@
 ﻿document.addEventListener('DOMContentLoaded',function main(){
-    ecraCategorias()
-    
+    //ecraCategorias();
+    ecraPilotos("f1");
 })
 
 function mostraCategorias(categorias) {
@@ -39,3 +39,39 @@ function ecraCategorias() {
         });
 }
 
+function mostraPilotos(pilotos) {
+    for (var i = 0; i < pilotos.length; i++) {
+        var piloto = pilotos[i];
+        var pilotoContainer = document.createElement('div');
+        pilotoContainer.setAttribute("id", piloto.id)
+
+        var nomeContainer = document.createElement('h3');
+        nomeContainer.textContent = piloto.name;
+
+        var idPiloto = piloto.id;
+        var image = getImagePiloto(idPiloto);
+        var imageContainer = document.createElement('img')
+        imageContainer.setAttribute("src", image)
+
+        var nacioContainer = document.createElement('div');
+        nacioContainer.textContent = piloto.nationality;
+
+        pilotoContainer.appendChild(nomeContainer);
+        pilotoContainer.appendChild(imageContainer);
+        pilotoContainer.appendChild(nacioContainer);
+
+
+        categ.appendChild(pilotoContainer);
+    }
+}
+
+
+function ecraPilotos(idCateg) {
+    return getPilotos(idCateg)
+        .then(function (pilotos) {
+            mostraPilotos(pilotos);
+        })
+        .catch(function (erro) {
+            console.error(erro);
+        });
+}
