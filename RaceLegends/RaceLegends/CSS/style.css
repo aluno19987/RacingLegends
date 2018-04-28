@@ -1,9 +1,28 @@
-﻿body {
+﻿body{
+    background-color:lightgray;
+    
+}
 
+.card {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: cadetblue;
+}
+
+.row {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#topBar {
+    background-color: black;
+    height: 55px;
 }
 
 #drivers {
     display: none;
 }
 
-
+#details{
+    text-align:justify
+}

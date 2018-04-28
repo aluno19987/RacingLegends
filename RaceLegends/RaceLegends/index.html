@@ -4,16 +4,33 @@
     <meta charset="utf-8" />
     <title></title>
 
-    <link href="/CSS/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="/CSS/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div id="topBar"> <h1>Racing Legends</h1> </div>
-    <div id="categ"></div>
-    <div id="drivers"></div>
-    <div id="details"></div>
-    <div id="mult"></div>
-
+    <div>
+        <div id="topBar"></div>
+        <div class="container" >
+            <div id="categ" class="row" style="display:flex; align-content:space-around;">
+            </div>
+        </div>
+        <div class="container" style="align-content:space-around">
+            <div id="drivers" class="row" style="display:flex;">
+            </div>
+        </div>
+        <div id="details" class="row" style="width:95%; margin-left:50px;"></div>
+        <div class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <img src=""  style="width:600px; height:400px; object-fit:cover;"/>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="/JavaScrip/dados.js"></script>
-    <script src="/JavaScrip/logica.js" /></script>
+    <script src="/JavaScrip/logica.js" ></script>
 </body>
 </html>
